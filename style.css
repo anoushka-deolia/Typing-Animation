@@ -1,0 +1,68 @@
+ body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: #1e1e1e;
+      font-family: 'Courier New', Courier, monospace;
+      color: #fff;
+      flex-direction: column;
+    }
+
+    .typing-container {
+      font-size: 2rem;
+      white-space: nowrap;
+      border-right: 4px solid #00ffea;
+      overflow: hidden;
+      width: 0;
+      animation: typingLoop 20s steps(28) infinite;
+    }
+
+    /* Infinite typing + deleting animation */
+    @keyframes typingLoop {
+      0%, 10% { width: 0; }
+      40%, 50% { width: 28ch; }
+      90%, 100% { width: 0; }
+    }
+
+    /* Blinking cursor */
+    .typing-container::after {
+      content: '';
+      border-right: 4px solid #00ffea;
+      margin-left: 2px;
+      animation: blink 0.75s step-end infinite;
+    }
+
+    @keyframes blink {
+      from, to { border-color: transparent; }
+      50% { border-color: #00ffea; }
+    }
+
+    .typing-sub {
+      font-size: 1.2rem;
+      color: #ff8c00;
+      margin-top: 10px;
+      white-space: nowrap;
+      border-right: 3px solid #ff8c00;
+      overflow: hidden;
+      width: 0;
+      animation: typingSubLoop 20s steps(37) infinite 1s;
+    }
+
+    @keyframes typingSubLoop {
+      0%, 10% { width: 0; }
+      40%, 50% { width: 37ch; }
+      90%, 100% { width: 0; }
+    }
+
+    .typing-sub::after {
+      content: '';
+      border-right: 3px solid #ff8c00;
+      margin-left: 2px;
+      animation: blink2 0.75s step-end infinite;
+    }
+
+    @keyframes blink2 {
+      from, to { border-color: transparent; }
+      50% { border-color: #ff8c00; }
+    }
